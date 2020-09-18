@@ -14,7 +14,7 @@ import org.freedesktop.dbus.UInt32;
 import org.freedesktop.dbus.Variant;
 import org.freedesktop.dbus.exceptions.DBusException;
 
-public abstract class NotificationServer implements Notifications, AutoCloseable {
+public abstract class NotificationServer implements Notifications {
 
     private static final String NOTIFICATIONS_BUS = "org.freedesktop.Notifications";
     private static final String NOTIFICATIONS_PATH = "/org/freedesktop/Notifications";
@@ -197,10 +197,5 @@ public abstract class NotificationServer implements Notifications, AutoCloseable
             conn.disconnect();
             conn = null;
         }
-    }
-
-    @Override
-    public void close() {
-        disconnect();
     }
 }
