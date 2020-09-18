@@ -178,7 +178,7 @@ public abstract class NotificationServer implements Notifications {
 
     private DBusConnection conn;
 
-    public void connect() throws IOException {
+    public final void connect() throws IOException {
         if (conn == null) {
             try {
                 conn = DBusConnection.getConnection(DBusConnection.SESSION);
@@ -192,7 +192,7 @@ public abstract class NotificationServer implements Notifications {
         }
     }
 
-    public void disconnect() {
+    public final void disconnect() {
         if (conn != null) {
             conn.disconnect();
             conn = null;
