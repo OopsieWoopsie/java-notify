@@ -65,4 +65,26 @@ public class NotificationRequest {
     public int getExpireTimeout() {
         return expire_timeout;
     }
+
+    @Override
+    public String toString() {
+        return String.format("[NotificationRequest"
+                + "\n  app_name=%s"
+                + "\n  replaces_id=%s"
+                + "\n  app_icon=%s"
+                + "\n  summary=%s"
+                + "\n  body=%s"
+                + "\n  actions=%s"
+                + "\n  hints=%s"
+                + "\n  expire_timeout=%d"
+                + "\n]",
+                app_name,
+                replaces_id,
+                app_icon,
+                summary,
+                body,
+                actions.toString(),
+                hints.toString(),
+                expire_timeout);
+    }
 }
